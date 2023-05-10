@@ -271,17 +271,14 @@ MiniAOD2NanoAOD::MiniAOD2NanoAOD(const edm::ParameterSet &iConfig)
   // Vertices
   vertexToken = consumes<reco::VertexCollection>(edm::InputTag("offlineSlimmedPrimaryVertices"));
 
-  /*
   tree->Branch("PV_npvs", &value_ve_n, "PV_npvs/I");
   tree->Branch("PV_x", &value_ve_x, "PV_x/F");
   tree->Branch("PV_y", &value_ve_y, "PV_y/F");
   tree->Branch("PV_z", &value_ve_z, "PV_z/F");
-  */
-
+ 
   // Muons
   muonToken = consumes<std::vector<pat::Muon> >(edm::InputTag("slimmedMuons"));
-
-/*  
+  
   tree->Branch("nMuon", &value_mu_n, "nMuon/i");
   tree->Branch("Muon_pt", value_mu_pt, "Muon_pt[nMuon]/F");
   tree->Branch("Muon_eta", value_mu_eta, "Muon_eta[nMuon]/F");
@@ -298,10 +295,9 @@ MiniAOD2NanoAOD::MiniAOD2NanoAOD(const edm::ParameterSet &iConfig)
   tree->Branch("Muon_dzErr", value_mu_dzErr, "Muon_dzErr[nMuon]/F");
   tree->Branch("Muon_jetIdx", value_mu_jetidx, "Muon_jetIdx[nMuon]/I");
   tree->Branch("Muon_genPartIdx", value_mu_genpartidx, "Muon_genPartIdx[nMuon]/I");
-*/
+
   // Electrons
   electronToken = consumes<std::vector<pat::Electron> >(edm::InputTag("slimmedElectrons"));
-  
   
   tree->Branch("nElectron", &value_el_n, "nElectron/i");
   tree->Branch("Electron_pt", value_el_pt, "Electron_pt[nElectron]/F");
@@ -318,7 +314,7 @@ MiniAOD2NanoAOD::MiniAOD2NanoAOD(const edm::ParameterSet &iConfig)
   tree->Branch("Electron_pfId", value_el_pfid, "Electron_pfId[nElectron]/O");
   tree->Branch("Electron_jetIdx", value_el_jetidx, "Electron_jetIdx[nElectron]/I");
   tree->Branch("Electron_genPartIdx", value_el_genpartidx, "Electron_genPartIdx[nElectron]/I");
- 
+  
   // Taus
   tauToken = consumes<std::vector<pat::Tau> >(edm::InputTag("slimmedTaus"));
 
@@ -376,7 +372,7 @@ MiniAOD2NanoAOD::MiniAOD2NanoAOD(const edm::ParameterSet &iConfig)
   */
   // MET
   metToken = consumes<std::vector<pat::MET> >(edm::InputTag("slimmedMETs"));
-  /*
+  
   tree->Branch("MET_pt", &value_met_pt, "MET_pt/F");
   tree->Branch("MET_phi", &value_met_phi, "MET_phi/F");
   tree->Branch("MET_sumet", &value_met_sumet, "MET_sumet/F");
@@ -384,7 +380,7 @@ MiniAOD2NanoAOD::MiniAOD2NanoAOD(const edm::ParameterSet &iConfig)
   tree->Branch("MET_CovXX", &value_met_covxx, "MET_CovXX/F");
   tree->Branch("MET_CovXY", &value_met_covxy, "MET_CovXY/F");
   tree->Branch("MET_CovYY", &value_met_covyy, "MET_CovYY/F");
-  */
+  
   // Jets
   jetToken = consumes<edm::View<pat::Jet> >(edm::InputTag("slimmedJets"));
 
